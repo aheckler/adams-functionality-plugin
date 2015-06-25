@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:    Adam's Functionality Plugin
- * Plugin URI:     https://github.com/aheckler/functionality-plugin
+ * Plugin URI:     https://github.com/aheckler/adams-functionality-plugin/
  * Description:    Custom code for AdamHeckler.com.
  * Version:        1.0
  * Author:         Adam Heckler
