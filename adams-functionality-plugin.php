@@ -26,7 +26,6 @@ add_filter( 'auto_update_translation', '__return_true' );
 add_filter( 'jetpack_get_default_modules', '__return_empty_array' );
 
 // Enable RICG's advanced image compression
-// https://github.com/ResponsiveImagesCG/wp-tevko-responsive-images#advanced-image-compression
 function enable_ricg_advanced_image_compression() {
     add_theme_support( 'advanced-image-compression' );
 }
