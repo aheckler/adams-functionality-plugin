@@ -30,3 +30,6 @@ function enable_ricg_advanced_image_compression() {
     add_theme_support( 'advanced-image-compression' );
 }
 add_action( 'after_setup_theme', 'enable_ricg_advanced_image_compression' );
+
+// Disable WP Rocket's page caching
+add_filter( 'do_rocket_generate_caching_files', '__return_false' );
