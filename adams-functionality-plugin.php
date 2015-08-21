@@ -33,3 +33,10 @@ add_action( 'after_setup_theme', 'enable_ricg_advanced_image_compression' );
 
 // Disable WP Rocket's page caching
 add_filter( 'do_rocket_generate_caching_files', '__return_false' );
+
+// Change Jetpack Related Posts headline
+function jetpackme_related_posts_headline( $headline ) {
+	$headline = sprintf( '<h3 class="jp-relatedposts-headline"><em>%s</em></h3>', esc_html__( 'Related Posts', 'jetpack' ) );
+	return $headline;
+}
+add_filter( 'jetpack_relatedposts_filter_headline', 'jetpackme_related_posts_headline' );
