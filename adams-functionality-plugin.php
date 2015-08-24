@@ -40,15 +40,3 @@ function jetpackme_related_posts_headline( $headline ) {
 	return $headline;
 }
 add_filter( 'jetpack_relatedposts_filter_headline', 'jetpackme_related_posts_headline' );
-
-// Show email subscribe form after post content
-function output_email_subscribe_form( $content ) {
-	if ( is_singular( 'post' ) ) {
-		$new_content = $content;
-		$new_content .= '<hr>' . Caldera_Forms::render_form( 'CF55db88a743b14' );
-		return $new_content;
-	} else {
-		return $content;
-	}
-}
-add_filter( 'the_content', 'output_email_subscribe_form' );
