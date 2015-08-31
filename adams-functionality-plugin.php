@@ -40,3 +40,17 @@ function jetpackme_related_posts_headline( $headline ) {
 	return $headline;
 }
 add_filter( 'jetpack_relatedposts_filter_headline', 'jetpackme_related_posts_headline' );
+
+// Show list of categories on Categories page
+function output_linked_list_of_categories( $content ) {
+	if ( is_page( 'Categories' ) ) {
+		$categories_list_id = 'categories-list';
+		$wp_list_categories_args = array( 
+			'title_li'	=> '', 
+			'echo'		=> 0 
+		);
+		$content .= '<ul id="' . $categories_list_id . '">' . wp_list_categories( $wp_list_categories_args ) . '</ul>';
+	}
+	return $content;
+}
+add_filter( 'the_content', 'output_linked_list_of_categories' );
