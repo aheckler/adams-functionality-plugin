@@ -61,4 +61,4 @@ wp_register_script( 'akh_fix_jetpack_subs_form_shortcode', plugins_url( 'js/fix_
 function akh_enqueue_jp_sub_fix_script() {
 	wp_enqueue_script( 'akh_fix_jetpack_subs_form_shortcode' );
 }
-add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
+add_action( 'wp_enqueue_scripts', 'akh_enqueue_jp_sub_fix_script' );
