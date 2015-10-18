@@ -62,3 +62,6 @@ function akh_fix_jp_subs_form() {
 	wp_enqueue_script( 'akh_fix_jetpack_subs_form_shortcode' );
 }
 add_action( 'wp_enqueue_scripts', 'akh_fix_jp_subs_form' );
+
+// Disable Akismet debug logging
+add_filter( 'akismet_debug_log', '__return_false' );
