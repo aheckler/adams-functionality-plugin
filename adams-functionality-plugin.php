@@ -35,14 +35,14 @@ add_action( 'after_setup_theme', 'enable_ricg_advanced_image_compression' );
 add_filter( 'do_rocket_generate_caching_files', '__return_false' );
 
 // Change Jetpack Related Posts headline
-function jetpackme_related_posts_headline( $headline ) {
+function akh_change_jp_rp_headline( $headline ) {
 	$headline = sprintf( '<h3 class="jp-relatedposts-headline"><em>%s</em></h3>', esc_html__( 'Related Posts', 'jetpack' ) );
 	return $headline;
 }
-add_filter( 'jetpack_relatedposts_filter_headline', 'jetpackme_related_posts_headline' );
+add_filter( 'jetpack_relatedposts_filter_headline', 'akh_change_jp_rp_headline' );
 
 // Show list of categories on Categories page
-function output_linked_list_of_categories( $content ) {
+function akh_output_linked_cat_list( $content ) {
 	if ( is_page( 'Categories' ) ) {
 		$categories_list_id = 'categories-list';
 		$wp_list_categories_args = array( 
@@ -53,7 +53,7 @@ function output_linked_list_of_categories( $content ) {
 	}
 	return $content;
 }
-add_filter( 'the_content', 'output_linked_list_of_categories' );
+add_filter( 'the_content', 'akh_output_linked_cat_list' );
 
 // Fix Jetpack Subscriptions form when output on a page
 // https://github.com/Automattic/jetpack/issues/2854
