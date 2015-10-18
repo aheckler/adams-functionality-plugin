@@ -58,4 +58,7 @@ add_filter( 'the_content', 'output_linked_list_of_categories' );
 // Fix Jetpack Subscriptions form when output on a page
 // https://github.com/Automattic/jetpack/issues/2854
 wp_register_script( 'akh_fix_jetpack_subs_form_shortcode', plugins_url( 'js/fix_jetpack_subs_form_shortcode.js', __FILE__ ), array( 'jquery' ), '1.0.0', true );
-wp_enqueue_script( 'akh_fix_jetpack_subs_form_shortcode' );
+function akh_enqueue_jp_sub_fix_script() {
+	wp_enqueue_script( 'akh_fix_jetpack_subs_form_shortcode' );
+}
+add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
