@@ -66,10 +66,6 @@ add_action( 'wp_enqueue_scripts', 'akh_fix_jp_subs_form' );
 // Disable Akismet debug logging
 add_filter( 'akismet_debug_log', '__return_false' );
 
-// Enable Epoch's lightweight server polling
-// http://docs.gopostmatic.com/article/192-how-to-enable-even-lighter-weight-server-polling
-define( 'EPOCH_ALT_COUNT_CHECK_MODE', true );
-
 // Close comments on attachment pages
 function akh_close_comments_on_attachment_pages( $open, $post_id ) {
 	$post = get_post( $post_id );
