@@ -39,9 +39,9 @@ add_filter( 'jetpack_relatedposts_filter_headline', 'akh_change_jp_rp_headline' 
 function akh_output_linked_cat_list( $content ) {
 	if ( is_page( 'Categories' ) ) {
 		$categories_list_id = 'categories-list';
-		$wp_list_categories_args = array( 
-			'title_li'	=> '', 
-			'echo'		=> 0 
+		$wp_list_categories_args = array(
+			'title_li'	=> '',
+			'echo'		=> 0
 		);
 		$content .= '<ul id="' . $categories_list_id . '">' . wp_list_categories( $wp_list_categories_args ) . '</ul>';
 	}
@@ -69,3 +69,12 @@ function akh_close_comments_on_attachment_pages( $open, $post_id ) {
 	return $open;
 }
 add_filter( 'comments_open', 'akh_close_comments_on_attachment_pages', 10, 2 );
+
+// Remove frontend edit links
+function akh_remove_edit_links( $link ) {
+    if ( ! is_admin() ) {
+        return '';
+    }
+    return $link;
+    }
+add_filter( 'get_edit_post_link', 'akh_remove_edit_links' );
