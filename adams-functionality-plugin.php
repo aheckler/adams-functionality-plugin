@@ -35,20 +35,6 @@ function akh_change_jp_rp_headline( $headline ) {
 }
 add_filter( 'jetpack_relatedposts_filter_headline', 'akh_change_jp_rp_headline' );
 
-// Show list of categories on Categories page
-function akh_output_linked_cat_list( $content ) {
-	if ( is_page( 'Categories' ) ) {
-		$categories_list_id = 'categories-list';
-		$wp_list_categories_args = array(
-			'title_li'	=> '',
-			'echo'		=> 0
-		);
-		$content .= '<ul id="' . $categories_list_id . '">' . wp_list_categories( $wp_list_categories_args ) . '</ul>';
-	}
-	return $content;
-}
-add_filter( 'the_content', 'akh_output_linked_cat_list' );
-
 // Disable Akismet debug logging
 add_filter( 'akismet_debug_log', '__return_false' );
 
