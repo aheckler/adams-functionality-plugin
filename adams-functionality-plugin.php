@@ -15,18 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit();
 }
 
-// Turn on auto-updates for everything
-add_filter( 'allow_major_auto_core_updates', '__return_true' );
-add_filter( 'allow_minor_auto_core_updates', '__return_true' );
-add_filter( 'auto_update_plugin', '__return_true' );
-add_filter( 'auto_update_theme', '__return_true' );
-add_filter( 'auto_update_translation', '__return_true' );
-
 // Disable Jetpack module auto-activation
 add_filter( 'jetpack_get_default_modules', '__return_empty_array' );
-
-// Disable WP Rocket's page caching
-add_filter( 'do_rocket_generate_caching_files', '__return_false' );
 
 // Change Jetpack Related Posts headline
 function akh_change_jp_rp_headline( $headline ) {
