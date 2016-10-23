@@ -39,8 +39,3 @@ function akh_remove_edit_links( $link ) {
 	return $link;
 }
 add_filter( 'get_edit_post_link', 'akh_remove_edit_links' );
-
-// https://core.trac.wordpress.org/ticket/18525
-if ( true === WP_DEBUG ) {
-	remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
-}
