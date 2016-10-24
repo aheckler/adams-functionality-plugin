@@ -39,3 +39,23 @@ function akh_remove_edit_links( $link ) {
 	return $link;
 }
 add_filter( 'get_edit_post_link', 'akh_remove_edit_links' );
+
+// Add site icons from https://realfavicongenerator.net/
+function akh_add_site_icons() {
+	$tags = array();
+	
+	$tags[] = '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=zXdg2aG2mj">';
+	$tags[] = '<link rel="icon" type="image/png" href="/favicon-32x32.png?v=zXdg2aG2mj" sizes="32x32">';
+	$tags[] = '<link rel="icon" type="image/png" href="/favicon-16x16.png?v=zXdg2aG2mj" sizes="16x16">';
+	$tags[] = '<link rel="manifest" href="/manifest.json?v=zXdg2aG2mj">';
+	$tags[] = '<link rel="mask-icon" href="/safari-pinned-tab.svg?v=zXdg2aG2mj" color="#5bbad5">';
+	$tags[] = '<link rel="shortcut icon" href="/favicon.ico?v=zXdg2aG2mj">';
+	$tags[] = '<meta name="apple-mobile-web-app-title" content="Adam Heckler">';
+	$tags[] = '<meta name="application-name" content="Adam Heckler">';
+	$tags[] = '<meta name="theme-color" content="#ffffff">';
+	
+	foreach ( $tags as $tag ) {
+		echo $tag . PHP_EOL;
+	}
+}
+add_action( 'wp_head', 'akh_add_site_icons' );
