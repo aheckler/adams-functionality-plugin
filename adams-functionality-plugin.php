@@ -59,3 +59,4 @@ function akh_add_site_icons() {
 	}
 }
 add_action( 'wp_head', 'akh_add_site_icons' );
+add_action( 'admin_head', 'akh_add_site_icons' );
