@@ -31,15 +31,6 @@ function akh_close_comments_on_attachment_pages( $open, $post_id ) {
 }
 add_filter( 'comments_open', 'akh_close_comments_on_attachment_pages', 10, 2 );
 
-// Remove frontend edit links
-function akh_remove_edit_links( $link ) {
-	if ( ! is_admin() ) {
-		return '';
-	}
-	return $link;
-}
-add_filter( 'get_edit_post_link', 'akh_remove_edit_links' );
-
 // Add site icons from https://realfavicongenerator.net/
 function akh_add_site_icons() {
 	$tags = array();
