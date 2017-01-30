@@ -30,3 +30,10 @@ function akh_close_comments_on_attachment_pages( $open, $post_id ) {
 	return $open;
 }
 add_filter( 'comments_open', 'akh_close_comments_on_attachment_pages', 10, 2 );
+
+// Disable XML-RPC pingbacks
+function akh_disable_pingbacks( $methods ) {
+    unset( $methods['pingback.ping'] );
+    return $methods;
+}
+add_filter( 'xmlrpc_methods', 'akh_disable_pingbacks' );
