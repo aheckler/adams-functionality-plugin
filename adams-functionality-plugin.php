@@ -37,3 +37,7 @@ function akh_disable_pingbacks( $methods ) {
     return $methods;
 }
 add_filter( 'xmlrpc_methods', 'akh_disable_pingbacks' );
+
+// Use Jetpack for two-factor authentication
+add_filter( 'jetpack_remove_login_form', '__return_true' );
+add_filter( 'jetpack_sso_bypass_login_forward_wpcom', '__return_true' );
